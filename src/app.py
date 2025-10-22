@@ -1,5 +1,9 @@
 import os
-import cmds.usredit as usredit
+try:
+    import cmds.usredit as usredit
+except:
+    print("A command couldn't be imported. Commands will not work other than fix.")
+import urllib.request
 print("Greminal - The Greg Terminal")
 print("By Freakybob Team - run help for list of commands")
 print("Run osl for licenses.")
@@ -16,4 +20,6 @@ cmdInput()
 if cmd == "usredit":
     usredit.cmd()
 if cmd == "fix":
-    print("Not implemented")
+    print("This command requires internet, and downloads from github.com.")
+    input("Run CTRL+C to exit or press enter to continue.")
+    urllib.request.urlretrieve("", "fix.py")

@@ -21,5 +21,6 @@ for item in data:
     else:
         os.mkdir("cmds/")
     urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/" + item["name"] + ".py", "cmds/" + item["name"]  + ".py")
+urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/app.py", "app.py")
 print("Commands downloaded!")
 subprocess.call(['python', 'app.py'])

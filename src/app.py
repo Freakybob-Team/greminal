@@ -3,6 +3,7 @@ import urllib.request
 import subprocess
 try:
     import cmds.usredit as usredit
+    import cmds.osl as osl
 except:
     print("A command couldn't be imported. Commands will not work other than fix.")
 print("Greminal - The Greg Terminal")
@@ -20,6 +21,9 @@ def cmdInput():
 cmdInput()
 if cmd == "usredit":
     usredit.cmd()
+if cmd == "osl":
+    osl.cmd()
+    cmdInput()
 if cmd == "fix":
     print("This command requires internet, and downloads from github.com.")
     input("Run CTRL+C to exit or press enter to continue.")

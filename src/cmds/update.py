@@ -22,15 +22,15 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     WHITE = '\033[97m'
-print(f"{bcolors.WHITE} This file uses Internet, and downloads from github.com")
+print(f"{bcolors.WHITE}This file uses Internet, and downloads from github.com")
 input("Run CTRL+C to exit or press enter to continue.")
 with urllib.request.urlopen("https://freakybob-team.github.io/greminal/data/cmds.json") as url:
     data = json.loads(url.read().decode())
+if os.path.exists("cmds/"):
+   print("cmds/ found; not creating")
+else:
+   os.mkdir("cmds/")
 for item in data:
-    if os.path.exists("cmds/"):
-        print("cmds/ found; not creating")
-    else:
-        os.mkdir("cmds/")
     urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/" + item["name"] + ".py", "cmds/" + item["name"]  + ".py")
 urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/app.py", "app.py")
 print("Commands downloaded!")

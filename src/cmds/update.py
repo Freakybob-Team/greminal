@@ -11,7 +11,18 @@ import urllib.request
 import json
 import os
 import subprocess
-print("This file uses Internet, and downloads from github.com")
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    WHITE = '\033[97m'
+print(f"{bcolors.WHITE} This file uses Internet, and downloads from github.com")
 input("Run CTRL+C to exit or press enter to continue.")
 with urllib.request.urlopen("https://freakybob-team.github.io/greminal/data/cmds.json") as url:
     data = json.loads(url.read().decode())

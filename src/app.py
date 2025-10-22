@@ -46,7 +46,7 @@ try:
         print(bcolors.OKBLUE + "This command requires internet, and downloads from github.com.")
         input("Run CTRL+C to exit or press enter to continue.")
         urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/update.py", "update.py")
-        print("fix.py downloaded, now running")
+        print("update.py downloaded, now running")
         subprocess.call(['python', 'update.py'])
     if cmd == "help":
         help.cmd()

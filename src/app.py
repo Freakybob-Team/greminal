@@ -1,9 +1,10 @@
 import os
+import urllib.request
+import subprocess
 try:
     import cmds.usredit as usredit
 except:
     print("A command couldn't be imported. Commands will not work other than fix.")
-import urllib.request
 print("Greminal - The Greg Terminal")
 print("By Freakybob Team - run help for list of commands")
 print("Run osl for licenses.")
@@ -22,4 +23,6 @@ if cmd == "usredit":
 if cmd == "fix":
     print("This command requires internet, and downloads from github.com.")
     input("Run CTRL+C to exit or press enter to continue.")
-    urllib.request.urlretrieve("", "fix.py")
+    urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/fix.py", "fix.py")
+    print("fix.py downloaded, now running")
+    subprocess.call(['python', 'fix.py'])

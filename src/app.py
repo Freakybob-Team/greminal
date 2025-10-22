@@ -10,6 +10,7 @@ try:
     try:
         import cmds.usredit as usredit
         import cmds.osl as osl
+        import cmds.help as help
     except:
         print("A command couldn't be imported. Commands will not work other than update.")
     print("Greminal - The Greg Terminal")
@@ -36,5 +37,8 @@ try:
         urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/fix.py", "update.py")
         print("fix.py downloaded, now running")
         subprocess.call(['python', 'update.py'])
+    if cmd == "help":
+        help.cmd()
+        cmdInput()
 except:
     print(f"\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}! :)")

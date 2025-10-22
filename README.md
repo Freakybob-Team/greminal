@@ -1,2 +1,2 @@
 # greminal
- greg terminal
+greg terminal

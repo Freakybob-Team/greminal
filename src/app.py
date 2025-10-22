@@ -13,6 +13,16 @@ try:
         import cmds.help as help
     except:
         print("A command couldn't be imported. Commands will not work other than update.")
+    class bcolors:
+        HEADER = '\033[95m'
+        OKBLUE = '\033[94m'
+        OKCYAN = '\033[96m'
+        OKGREEN = '\033[92m'
+        WARNING = '\033[93m'
+        FAIL = '\033[91m'
+        ENDC = '\033[0m'
+        BOLD = '\033[1m'
+        UNDERLINE = '\033[4m'
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Greminal - The Greg Terminal")
     print("By Freakybob Team - run help for list of commands")
@@ -22,7 +32,7 @@ try:
     username = "admin"
     if os.path.exists("user.txt"):
         with open("user.txt", "r") as file:
-            username = file.read()
+            username = bcolors.OKGREEN + file.read()
     def cmdInput():
         global cmd
         cmd = input(f"{username}@greminal:$ ")
@@ -33,7 +43,7 @@ try:
         osl.cmd()
         cmdInput()
     if cmd == "update":
-        print("This command requires internet, and downloads from github.com.")
+        print(bcolors.OKBLUE + "This command requires internet, and downloads from github.com.")
         input("Run CTRL+C to exit or press enter to continue.")
         urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/update.py", "update.py")
         print("fix.py downloaded, now running")
@@ -42,4 +52,4 @@ try:
         help.cmd()
         cmdInput()
 except:
-    print(f"\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}! :)")
+    print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}! :)")

@@ -23,19 +23,19 @@ try:
         ENDC = '\033[0m'
         BOLD = '\033[1m'
         UNDERLINE = '\033[4m'
+        WHITE = '\033[97m'
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Greminal - The Greg Terminal")
     print("By Freakybob Team - run help for list of commands")
     print("Run osl for licenses.")
     print("Set username with usredit")
-    print("Commands are stored in the cmds folder. if not found, run update.")
     username = "admin"
     if os.path.exists("user.txt"):
         with open("user.txt", "r") as file:
             username = bcolors.OKGREEN + file.read()
     def cmdInput():
         global cmd
-        cmd = input(f"{username}{bcolors.HEADER}@greminal:$ ")
+        cmd = input(f"{username}{bcolors.HEADER}@greminal:${bcolors.WHITE} ")
     cmdInput()
     if cmd == "usredit":
         usredit.cmd()
@@ -52,4 +52,4 @@ try:
         help.cmd()
         cmdInput()
 except:
-    print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}! :)")
+    print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}{bcolors.WHITE}! :)")

@@ -35,7 +35,7 @@ try:
             username = bcolors.OKGREEN + file.read()
     def cmdInput():
         global cmd
-        cmd = input(f"{username}@greminal:$ ")
+        cmd = input(f"{username}{bcolors.HEADER}@greminal:$ ")
     cmdInput()
     if cmd == "usredit":
         usredit.cmd()

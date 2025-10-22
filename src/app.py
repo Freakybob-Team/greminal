@@ -11,7 +11,7 @@ try:
         import cmds.usredit as usredit
         import cmds.osl as osl
     except:
-        print("A command couldn't be imported. Commands will not work other than fix.")
+        print("A command couldn't be imported. Commands will not work other than update.")
     print("Greminal - The Greg Terminal")
     print("By Freakybob Team - run help for list of commands")
     print("Run osl for licenses.")

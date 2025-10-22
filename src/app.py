@@ -13,6 +13,7 @@ try:
         import cmds.help as help
     except:
         print("A command couldn't be imported. Commands will not work other than update.")
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Greminal - The Greg Terminal")
     print("By Freakybob Team - run help for list of commands")
     print("Run osl for licenses.")

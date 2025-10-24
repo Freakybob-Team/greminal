@@ -11,6 +11,7 @@ try:
         import cmds.usredit as usredit
         import cmds.osl as osl
         import cmds.help as help
+        import cmds.echo as echo
     except:
         print("A command couldn't be imported. Commands will not work other than update.")
     class bcolors:
@@ -52,6 +53,9 @@ try:
                     subprocess.call(['python', 'update.py'])
                 if cmd == "help":
                     help.cmd()
+                    cmdInput()
+                if cmd.startswith("echo"):
+                    echo.cmd(cmd)
                     cmdInput()
 except:
     print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}{bcolors.WHITE}! :)")

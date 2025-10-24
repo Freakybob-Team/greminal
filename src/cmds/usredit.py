@@ -13,4 +13,4 @@ def cmd():
     user = input("> ")
     with open("user.txt", "w") as file:
         file.write(user)
-    print("Your username has been changed to " + user + "! Greminal will now close; restart to see the changes.")
+    print("Your username has been changed to " + user + "! Restart to see the changes.")

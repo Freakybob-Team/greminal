@@ -13,6 +13,7 @@ try:
         import cmds.help as help
         import cmds.echo as echo
         import cmds.food as food
+        import cmds.ls as ls
     except Exception as e:
         print("A command couldn't be imported. Commands will not work other than update.")
         print("More info: " + str(e))
@@ -62,6 +63,8 @@ try:
                 if cmd.startswith("food"):
                     food.cmd(cmd)
                     cmdInput()
+                if cmd == "ls":
+                    ls.cmd()
 except Exception as e:
     print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}{bcolors.WHITE}! :)")
     print("More details: " + str(e))

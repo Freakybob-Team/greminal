@@ -12,8 +12,10 @@ try:
         import cmds.osl as osl
         import cmds.help as help
         import cmds.echo as echo
-    except:
+        import cmds.food as food
+    except Exception as e:
         print("A command couldn't be imported. Commands will not work other than update.")
+        print("More info: " + str(e))
     class bcolors:
         HEADER = '\033[95m'
         OKBLUE = '\033[94m'
@@ -57,5 +59,9 @@ try:
                 if cmd.startswith("echo"):
                     echo.cmd(cmd)
                     cmdInput()
-except:
+                if cmd.startswith("food"):
+                    food.cmd(cmd)
+                    cmdInput()
+except Exception as e:
     print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}{bcolors.WHITE}! :)")
+    print("More details: " + str(e))

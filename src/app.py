@@ -33,36 +33,25 @@ try:
     if os.path.exists("user.txt"):
         with open("user.txt", "r") as file:
             username = bcolors.OKGREEN + file.read()
-    def cmdInput():
-        global cmd
-        cmd = input(f"{username}{bcolors.HEADER}@greminal:${bcolors.WHITE} ")
-    cmdInput()
-    if cmd:
-        if cmd == "usredit":
-            usredit.cmd()
-        else:
-            print("Command not found!")
+        while True:
+            def cmdInput():
+                global cmd
+                cmd = input(f"{username}{bcolors.HEADER}@greminal:${bcolors.WHITE} ")
             cmdInput()
-        if cmd == "osl":
-            osl.cmd()
-            cmdInput()
-        else:
-            print("Command not found!")
-            cmdInput()
-        if cmd == "update":
-            print(bcolors.OKBLUE + "This command requires internet, and downloads from github.com.")            
-            input("Run CTRL+C to exit or press enter to continue.")
-            urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/update.py", "update.py")
-            print("update.py downloaded, now running")
-            subprocess.call(['python', 'update.py'])
-        else:
-            print("Command not found!")
-            cmdInput()
-        if cmd == "help":
-            help.cmd()
-            cmdInput()
-        else:
-            print("Command not found!")
-            cmdInput()
+            if cmd:
+                if cmd == "usredit":
+                    usredit.cmd()
+                if cmd == "osl":
+                    osl.cmd()
+                    cmdInput()
+                if cmd == "update":
+                    print(bcolors.OKBLUE + "This command requires internet, and downloads from github.com.")            
+                    input("Run CTRL+C to exit or press enter to continue.")
+                    urllib.request.urlretrieve("https://freakybob-team.github.io/greminal/src/cmds/update.py", "update.py")
+                    print("update.py downloaded, now running")
+                    subprocess.call(['python', 'update.py'])
+                if cmd == "help":
+                    help.cmd()
+                    cmdInput()
 except:
     print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}{bcolors.WHITE}! :)")

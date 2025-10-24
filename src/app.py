@@ -14,6 +14,7 @@ try:
         import cmds.echo as echo
         import cmds.food as food
         import cmds.ls as ls
+        import cmds.fetch as fetch
     except Exception as e:
         print("A command couldn't be imported. Commands will not work other than update.")
         print("More info: " + str(e))
@@ -65,6 +66,10 @@ try:
                     cmdInput()
                 if cmd == "ls":
                     ls.cmd()
+                    cmdInput()
+                if cmd == "fetch":
+                    fetch.cmd()
+                    cmdInput()
 except Exception as e:
     print(f"{bcolors.WARNING}\nThere was either an error or you exited Greminal yourself. Hope to see you back soon, {username}{bcolors.WHITE}! :)")
     print("More details: " + str(e))
